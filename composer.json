@@ -1,0 +1,32 @@
+{
+    "name": "vook/php-fitbank",
+    "description": "lib de conexao com api do fitbank para php",
+    "keywords": [
+        "laravel",
+        "lumen",
+        "fitbank",
+        "webservice",
+        "payments"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jhony Mota",
+            "email": "jhonymota@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">= 7.2",
+        "ext-json": "*",
+        "illuminate/support": "^5.9",
+        "guzzlehttp/guzzle": "^6.3.3",
+        "illuminate/config": "^5.9@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vook\\Fitbank\\": "src/"
+        }
+    }
+}

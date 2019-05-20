@@ -1,0 +1,5 @@
+{
+  "Success": "false",
+  "Message": "Cannot insert the value NULL into column 'SocialSecurity', table 'fb_servicesystem.dbo.IndividualPerson'; column does not allow nulls. INSERT fails.\r\nThe statement has been terminated.",
+  "Validation": []
+}

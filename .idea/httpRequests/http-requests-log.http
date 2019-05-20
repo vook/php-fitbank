@@ -1,0 +1,794 @@
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 123456789,
+  "BusinessUnitId": 123456789,
+  "Name": "MoneyCloud",
+  "TaxNumber": 30153943000115,
+  "Barcode": "23797000000000000004150090010955065400021140",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-20T045944.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 123456789,
+  "BusinessUnitId": 123456789,
+  "Name": "MoneyCloud",
+  "TaxNumber": 30153943000115,
+  "Barcode": "23797000000000000004150090010955065400021140",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-20T045912.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CancelBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "DocumentNumber": "4941"
+}
+
+<> 2019-05-20T045655.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetInfosCIPByBarcode",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "TaxNumber": "30153943000115",
+  "Barcode": "23794786300001000003381260004869481200005080"
+}
+
+<> 2019-05-20T045615.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "11111111111",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-20T045520.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "37011287825",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-20T045438.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "11122233344",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-20T045426.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetInfosByBarcode",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Barcode": "23794786300001000003381260004869481200005080"
+}
+
+<> 2019-05-20T045400.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetAccountEntry",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "TaxNumber": "30153943000115",
+  "StartDate": "2019/03/31",
+  "EndDate": "2019/05/31"
+}
+
+<> 2019-05-20T045202.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetMoneyTransferOutById",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "DocumentNumber": 4752
+}
+
+<> 2019-05-20T045046.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CancelMoneyTransfer",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "DocumentNumber": 4753
+}
+
+<> 2019-05-20T045016.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "MoneyTransfer",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "FromTaxNumber": "30153943000115",
+  "ToTaxNumber": "05338235951",
+  "ToName": "Eduardo Nazario de Oliveira",
+  "Bank": "1",
+  "BankBranch": "2695",
+  "BankAccount": "29094",
+  "BankAccountDigit": "7",
+  "AccountType": 1,
+  "Value": 1.57,
+  "RateValue": 0,
+  "Identifier": "7d98f15318d4cb6771-1f3e197c98k25646545",
+  "RateValueType": 1,
+  "Tags": ["Teste TED"],
+  "Description": "",
+  "PaymentDate": "2019/06/17"
+}
+
+<> 2019-05-20T044904.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "MoneyTransfer",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "FromTaxNumber": "30153943000115",
+  "ToTaxNumber": "05338235951",
+  "ToName": "Eduardo Nazario de Oliveira",
+  "Bank": "1",
+  "BankBranch": "2695",
+  "BankAccount": "29094",
+  "BankAccountDigit": "7",
+  "AccountType": 1,
+  "Value": 1.57,
+  "RateValue": 0,
+  "Identifier": "7d98f15318d4cb6771-1f3e197c98k25646545",
+  "RateValueType": 1,
+  "Tags": ["Teste TED"],
+  "Description": "",
+  "PaymentDate": "2019/04/17"
+}
+
+<> 2019-05-20T044850.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetMoneyTransferInById",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "DocumentNumber": "266"
+}
+
+<> 2019-05-20T044527.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "MoneyTransferIn",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "SupplierName": "MONEYCLOUD",
+  "SupplierTaxNumber": "30153943000115",
+  "SupplierTradingName": "MONEYCLOUD",
+  "SupplierMail": "dev@moneycloud.com.br",
+  "SupplierPhone": "6135518999",
+  "TransferDate": "2019/04/17",
+  "BankNumber": "341",
+  "BankBranch": "0060",
+  "BankAccount": "01086192",
+  "BankAccountDigit": "7",
+  "TotalValue": 50,
+  "RateValue": 0,
+  "MktPlaceId": 7951,
+  "Products": []
+}
+
+<> 2019-05-20T044236.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CreateAccount",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Mail": "dev@moneycloud.com.br",
+  "Phone": 613551899,
+  "Nickname": "Moneycloud",
+  "Name": "Moneycloud",
+  "TaxNumber": "30153943000115"
+}
+
+<> 2019-05-20T043508.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CreateAccount",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Mail": "dev@moneycloud.com.br",
+  "Phone": 613551899,
+  "Nickname": "Moneycloud",
+  "Name": "Moneycloud",
+
+}
+
+<> 2019-05-20T042204.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CreateAccount",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Mail": "dev@moneycloud.com.br",
+  "Phone": 613551899,
+  "Nickname": "Moneycloud",
+  "Name": "Moneycloud",
+  "TaxNumber": "30153943000115"
+}
+
+<> 2019-05-20T042138.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CreateAccount",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Mail": "dev@moneycloud.com.br",
+  "Phone": 6135518999,
+  "Nickname": "Moneycloud",
+  "Name": "Moneycloud",
+  "TaxNumber": "30153943000115"
+}
+
+<> 2019-05-20T041610.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method":"GenerateBoleto",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "MktPlaceId": 11864,
+  "GroupTemplate":2,
+  "CustomerName":"Verônica Gomes",
+  "CustomerTaxNumber":"31385371030",
+  "CustomerMail":"uelinton.souza@fitbank.com.br",
+  "CustomerPhone":"11969100665",
+  "RateValue":"2.50",
+  "SupplierTaxNumber":"30153943000115",
+  "SupplierFullName":"MONEYCLOUD",
+  "SupplierTradingName":"MONEYCLOUD",
+  "SupplierLegalName":"MONEYCLOUD",
+  "SupplierMail":"uelinton.souza@fitbank.com.br",
+  "SupplierPhone":"",
+  "AddressLine1":"ABC",
+  "Neighborhood":"DEF",
+  "City":"São Paulo",
+  "State":"SP",
+  "ZipCode":"08574465",
+  "MailToSend":"uelinton.souza@fitbank.com.br",
+  "PhoneToSend":"00000000000",
+  "ExternalNumber":"01040852157",
+  "Identifier":"31sss385sdssdfddds371030",
+  "Products":[
+    {
+      "ReceiverPersonType":0,
+      "ReceiverName":"MONEYCLOUD",
+      "ReceiverTaxNumber":"01040852157",
+      "SellerPersonType":0,
+      "SellerName":"Uelinton Matos LTD",
+      "SellerTaxNumber":"01040852157",
+      "Reference":"12314446",
+      "ProductCode":"13148",
+      "ProductName":"Serviço",
+      "ProductQty":1,
+      "ProductValue":10,
+      "ProductRateValue":0
+    }
+  ],
+
+  "DueDate": "2019/05/20",
+  "TotalValue":10
+}
+
+<> 2019-05-17T053730.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method":"GenerateBoleto",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "MktPlaceId": 11864,
+  "GroupTemplate":2,
+  "CustomerName":"Verônica Gomes",
+  "CustomerTaxNumber":"31385371030",
+  "CustomerMail":"uelinton.souza@fitbank.com.br",
+  "CustomerPhone":"11969100665",
+  "RateValue":"2.50",
+  "SupplierTaxNumber":"30153943000115",
+  "SupplierFullName":"MONEYCLOUD",
+  "SupplierTradingName":"MONEYCLOUD",
+  "SupplierLegalName":"MONEYCLOUD",
+  "SupplierMail":"uelinton.souza@fitbank.com.br",
+  "SupplierPhone":"",
+  "AddressLine1":"ABC",
+  "Neighborhood":"DEF",
+  "City":"São Paulo",
+  "State":"SP",
+  "ZipCode":"08574465",
+  "MailToSend":"uelinton.souza@fitbank.com.br",
+  "PhoneToSend":"00000000000",
+  "ExternalNumber":"01040852157",
+  "Identifier":"31385sdssdfddds371030",
+  "Products":[
+    {
+      "ReceiverPersonType":0,
+      "ReceiverName":"MONEYCLOUD",
+      "ReceiverTaxNumber":"01040852157",
+      "SellerPersonType":0,
+      "SellerName":"Uelinton Matos LTD",
+      "SellerTaxNumber":"01040852157",
+      "Reference":"12314446",
+      "ProductCode":"13148",
+      "ProductName":"Serviço",
+      "ProductQty":1,
+      "ProductValue":10,
+      "ProductRateValue":0
+    }
+  ],
+
+  "DueDate": "2019/05/20",
+  "TotalValue":10
+}
+
+<> 2019-05-17T053716.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method":"GenerateBoleto",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "MktPlaceId": 11864,
+  "GroupTemplate":2,
+  "CustomerName":"Verônica Gomes",
+  "CustomerTaxNumber":"31385371030",
+  "CustomerMail":"uelinton.souza@fitbank.com.br",
+  "CustomerPhone":"11969100665",
+  "RateValue":"2.50",
+  "SupplierTaxNumber":"30153943000115",
+  "SupplierFullName":"MONEYCLOUD",
+  "SupplierTradingName":"MONEYCLOUD",
+  "SupplierLegalName":"MONEYCLOUD",
+  "SupplierMail":"uelinton.souza@fitbank.com.br",
+  "SupplierPhone":"",
+  "AddressLine1":"ABC",
+  "Neighborhood":"DEF",
+  "City":"São Paulo",
+  "State":"SP",
+  "ZipCode":"08574465",
+  "MailToSend":"uelinton.souza@fitbank.com.br",
+  "PhoneToSend":"00000000000",
+  "ExternalNumber":"01040852157",
+  "Identifier":"31385sdssdfddds371030",
+  "Products":[
+    {
+      "ReceiverPersonType":0,
+      "ReceiverName":"MONEYCLOUD",
+      "ReceiverTaxNumber":"01040852157",
+      "SellerPersonType":0,
+      "SellerName":"Uelinton Matos LTD",
+      "SellerTaxNumber":"01040852157",
+      "Reference":"12314446",
+      "ProductCode":"13148",
+      "ProductName":"Serviço",
+      "ProductQty":1,
+      "ProductValue":10,
+      "ProductRateValue":0
+    }
+  ],
+
+  "DueDate": "2019/04/19",
+  "TotalValue":10
+}
+
+<> 2019-05-17T053648.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetInfosCIPByBarcode",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "TaxNumber": "30153943000115",
+  "Barcode": "23794786300001000003381260004869481200005080"
+}
+
+<> 2019-05-17T043345.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "11122233344",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-17T031636.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "11122233344",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-17T031624.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "123456",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-17T031552.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "37011287825",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-17T031434.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GenerateBoletoOut",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Name": "MoneyCloud",
+  "TaxNumber": "3015394300011434",
+  "Barcode": "23794786300001000003381260004869481200005080",
+  "PrincipalValue": 99,
+  "DiscountValue": 11,
+  "ExtraValue": 29,
+  "PaymentDate": "2017/02/09",
+  "DueDate": "2017/02/09",
+  "Identifier": "45t43tg3",
+  "RateValueType": 2,
+  "RateValue": 0
+}
+
+<> 2019-05-17T025555.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "GetMoneyTransferOutById",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "DocumentNumber": 4752
+}
+
+<> 2019-05-17T022352.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "MoneyTransferIn",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "SupplierName": "MONEYCLOUD",
+  "SupplierTaxNumber": "30153943000115",
+  "SupplierTradingName": "MONEYCLOUD",
+  "SupplierMail": "dev@moneycloud.com.br",
+  "SupplierPhone": "6135518999",
+  "TransferDate": "2019/04/17",
+  "BankNumber": "341",
+  "BankBranch": "0060",
+  "BankAccount": "01086192",
+  "BankAccountDigit": "7",
+  "TotalValue": 50,
+  "RateValue": 0,
+  "MktPlaceId": 7951,
+  "Products": []
+}
+
+<> 2019-05-16T054351.200.json
+
+###
+
+POST https://sandbox.fitbank.com.br/hmlapi/main/execute
+Content-Type: application/json
+Authorization: Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ==
+X-Requested-With: XMLHttpRequest
+
+{
+  "Method": "CreateAccount",
+  "PartnerId": 191,
+  "BusinessUnitId": 171,
+  "Mail": "dev@moneycloud.com.br",
+  "Phone": 6135518999,
+  "Nickname": "Moneycloud",
+  "Name": "Moneycloud",
+  "TaxNumber": "30153943000115"
+}
+
+<> 2019-05-16T035115.200.json
+
+###
+

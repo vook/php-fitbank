@@ -1,0 +1,5 @@
+{
+  "Success": "false",
+  "Message": "ISE0029 - Não é possivel gerar um boleto com data de vencimento inferior a atual  17/05/2019.",
+  "Validation": []
+}

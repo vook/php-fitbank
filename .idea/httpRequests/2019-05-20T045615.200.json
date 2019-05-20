@@ -1,0 +1,4 @@
+{
+  "Success": "true",
+  "Infos": "{\"Drawer\":\"BANCO BRADESCO S.A.\",\"TaxNumberBeneficiary\":\"21.568.259/0001-00\",\"TaxNumberDrawee\":\"96.906.497/0001-00\",\"PaymentDate\":\"2019-06-02T00:00:00\",\"DateDueRegistration\":\"2019-04-18T00:00:00\",\"BeneficiaryName\":\"BENEFICIARIO AMBIENTE HOMOLOGACAO\",\"DraweeName\":\"PAGADOR AMBIENTE HOMOLOGACAO\",\"DiscountValue\":0.0,\"InterestValue\":0.0,\"MaxPaymentValue\":0.0,\"MinPaymentValue\":0.0,\"FineValue\":0.0,\"NominalValue\":1000.0,\"UpdatedValue\":1000.0,\"TotalRebateValue\":0.0,\"TotalAddedValue\":0.0,\"SettlementDate\":null,\"DueDate\":\"2019-04-18T00:00:00Z\",\"NextSettlement\":true,\"DigitableLine\":\"23793381286000486948712000050802478630000100000\",\"Value\":1000.0,\"MaxValue\":null,\"MinValue\":null,\"PaymentWasMade\":false}"
+}
