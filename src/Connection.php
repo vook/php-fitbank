@@ -60,7 +60,7 @@ class Connection
             if ($request->getStatusCode() > 400) {
                 throw new \FitbankInternalErrorException();
             }
-            $request = json_decode($request->getBody()->getContents());
+            $request = json_decode($request->getBody()->getContents(), true);
             if (!$request['Success']) {
                 throw new \FitbankErrorException($request['Message'] ?? '');
             }

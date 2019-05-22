@@ -21,8 +21,8 @@
         "php": ">= 7.2",
         "ext-json": "*",
         "illuminate/support": "^5.9",
-        "guzzlehttp/guzzle": "^6.3.3",
-        "illuminate/config": "^5.9@dev"
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/config": "^5.8"
     },
     "autoload": {
         "psr-4": {
