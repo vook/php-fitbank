@@ -4,6 +4,8 @@ namespace Vook\Fitbank;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Vook\Fitbank\Exceptions\FitbankErrorException;
+use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
 
 /**
  * Class Connection
@@ -13,7 +15,22 @@ class Connection
 {
     const SANDBOX_URL = 'https://sandbox.fitbank.com.br';
     const PROD_URL  = '';
-    const MAIN_REQUEST_URI = 'hmlapi/main/execute';
+    const MAIN_REQUEST_URI = '/hmlapi/main/execute';
+
+    /**
+     * @var int
+     */
+    private $partnerId;
+
+    /**
+     * @var int
+     */
+    private $businessUnitId;
+
+    /**
+     * @var int
+     */
+    private $marketPlaceId;
 
     /**
      * @var Client
@@ -27,8 +44,11 @@ class Connection
      * @param int $timeout
      * @param bool $isSandBox
      */
-    public function __construct($username, $password, $timeout, $isSandBox = true)
+    public function __construct($username, $password, $partnerId, $businessUnitId, $marketPlaceId, $timeout, $isSandBox = true)
     {
+        $this->partnerId = $partnerId;
+        $this->businessUnitId = $businessUnitId;
+        $this->marketPlaceId = $marketPlaceId;
         if (!$username && !$password) {
             $isSandBox = true;
         }
@@ -38,9 +58,9 @@ class Connection
             'timeout'           => $timeout,
             'allow_redirects'   => false,
             'headers'           => [
-                'content-type'      => 'application/json',
-                'x-requested-with'  => 'XMLHttpRequest',
-                'authorization'     => "Basic {$auth}"
+                'Content-Type'      => 'application/json',
+                'X-Requested-With'  => 'XMLHttpRequest',
+                'Authorization'     => "Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ=="
             ]
         ]);
     }
@@ -51,23 +71,29 @@ class Connection
      * @throws \FitbankErrorException
      * @throws \FitbankInternalErrorException,
      */
-    public function doRequest($params)
+    public function doRequest(string $method, array $params, bool $hasMarketPlace = false)
     {
         try {
             $request = $this->client->request('POST', self::MAIN_REQUEST_URI, [
-                'json' => $params
+                'json' => array_merge($params, [
+                    'Method'            => $method,
+                    'PartnerId'         => $this->partnerId,
+                    'BusinessUnitId'    => $this->businessUnitId
+                ], $hasMarketPlace ? [
+                    'MktPlaceId'        => $this->marketPlaceId
+                ] : [])
             ]);
             if ($request->getStatusCode() > 400) {
                 throw new \FitbankInternalErrorException();
             }
             $request = json_decode($request->getBody()->getContents(), true);
-            if (!$request['Success']) {
-                throw new \FitbankErrorException($request['Message'] ?? '');
+            if (!$request['Success'] || $request['Success'] == 'false') {
+                throw new FitbankErrorException($request['Message'] ?? '');
             }
             unset($request['Success']);
             return $request;
         } catch (GuzzleException $e) {
-            throw new \FitbankInternalErrorException($e->getMessage(), $e->getCode(), $e);
+            throw new FitbankInternalErrorException($e->getMessage(), $e->getCode(), $e);
         }
 
     }

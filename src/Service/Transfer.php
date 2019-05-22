@@ -2,6 +2,7 @@
 
 namespace Vook\Fitbank\Service;
 
+use Vook\Fitbank\Abstracts\Service;
 use Vook\Fitbank\Abstracts\Person;
 use Vook\Fitbank\Responses\TransferIn;
 use Vook\Fitbank\Responses\TransferOut;
@@ -23,9 +24,6 @@ class Transfer extends Service
     public function createVirtualAccount(Person $person)
     {
         $params = [
-            "Method"            => "CreateAccount",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
             "Mail"              => $person->getEmail(),
             "Phone"             => $person->getPhone(),
             "Nickname"          => $person->getNickName(),
@@ -41,7 +39,7 @@ class Transfer extends Service
                 "BankAccountDigit" =>   $bank->getAccountDigit()
             ]);
         }
-        $response = $this->connection->doRequest($params);
+        $response = $this->connection->doRequest("CreateAccount", $params);
         return VirtualAccount::hydrate($response);
     }
 
@@ -63,10 +61,6 @@ class Transfer extends Service
         array $products = []
     ) {
         $params = [
-            "Method"                => "MoneyTransferIn",
-            "PartnerId"             => $this->partnerId,
-            "BusinessUnitId"        => $this->businessUnitId,
-            "MktPlaceId"            => $this->marketId,
             "TotalValue"            => $value,
             "RateValue"             => $rate,
             "TransferDate"          => $transferredAt->format('Y/m/d'),
@@ -98,7 +92,7 @@ class Transfer extends Service
                 "IsAutomatic"       => $product->isAutomatic()
             ];
         }
-        $response = $this->connection->doRequest($params);
+        $response = $this->connection->doRequest("MoneyTransferIn", $params, true);
         return TransferIn::hydrate($response);
     }
 
@@ -111,12 +105,9 @@ class Transfer extends Service
     public function verifyTransferIn(int $documentNumber)
     {
         $response = $this->connection->doRequest([
-            "Method"            => "GetMoneyTransferInById",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
             "DocumentNumber"    => $documentNumber
         ]);
-        return TransferIn::hydrate($response);
+        return TransferIn::hydrate("GetMoneyTransferInById", $response);
     }
 
     /**
@@ -144,10 +135,7 @@ class Transfer extends Service
         \DateTime $payedAt,
         ?array $tags = []
     ) {
-        $response = $this->connection->doRequest([
-            "Method"                    => "MoneyTransfer",
-            "PartnerId"                 => $this->partnerId,
-            "BusinessUnitId"            => $this->businessUnitId,
+        $response = $this->connection->doRequest("MoneyTransfer", [
             "FromTaxNumber"             => $from->getPersonIdentity(),
             "FromBank"                  => $from->getBank()->getBankNumber(),
             "FromBankBranch"            => $from->getBank()->getBranchNumber(),
@@ -186,8 +174,7 @@ class Transfer extends Service
      */
     public function cancelTransfer(int $documentNumber)
     {
-        $this->connection->doRequest([
-            "Method"            => "CancelMoneyTransfer",
+        $this->connection->doRequest("CancelMoneyTransfer", [
             "PartnerId"         => $this->partnerId,
             "BusinessUnitId"    => $this->businessUnitId,
             "DocumentNumber"    => $documentNumber
@@ -202,10 +189,7 @@ class Transfer extends Service
      */
     public function verifyTransferOut(int $documentNumber)
     {
-        $response = $this->connection->doRequest([
-            "Method"            => "GetMoneyTransferOutById",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
+        $response = $this->connection->doRequest("GetMoneyTransferOutById", [
             "DocumentNumber"    => $documentNumber
         ]);
         return TransferOut::hydrate($response['Transferencia']);

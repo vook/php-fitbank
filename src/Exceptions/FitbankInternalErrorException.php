@@ -1,6 +1,8 @@
 <?php
 
-class FitbankInternalErrorException extends Exception
+namespace Vook\Fitbank\Exceptions;
+
+class FitbankInternalErrorException extends \Exception
 {
 
 }

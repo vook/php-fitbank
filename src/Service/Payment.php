@@ -2,6 +2,7 @@
 
 namespace Vook\Fitbank\Service;
 
+use Vook\Fitbank\Abstracts\Service;
 use Vook\Fitbank\Entities\Bill;
 use Vook\Fitbank\Responses\BillInfo;
 use Vook\Fitbank\Responses\BillPayed;
@@ -21,10 +22,7 @@ class Payment extends Service
      */
     public function readBarcode(Bill $bill)
     {
-        $info = $this->connection->doRequest([
-            "Method"            => "GetInfosByBarcode",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
+        $info = $this->connection->doRequest( "GetInfosByBarcode", [
             "Barcode"           => $bill->getBarCode(),
         ])['Infos'];
         return BillInfo::hydrate($info);
@@ -39,9 +37,6 @@ class Payment extends Service
     public function payBill(Bill $bill)
     {
         $request = [
-            "Method"            => "GenerateBoletoOut",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
             "Name"              => $bill->getPayer()->getPersonName(),
             "TaxNumber"         => $bill->getPayer()->getPersonIdentity(),
             "Barcode"           => $bill->getBarCode(),
@@ -86,7 +81,7 @@ class Payment extends Service
                 "GuarantorName"             => $guarantor->getPersonName(),
             ]);
         }
-        $response = $this->connection->doRequest($request);
+        $response = $this->connection->doRequest("GenerateBoletoOut", $request);
         return BillPayed::hydrate($response);
     }
 
@@ -98,10 +93,7 @@ class Payment extends Service
      */
     public function getInfoCIP(Bill $bill)
     {
-        $response = $this->connection->doRequest([
-            "Method"            => "GetInfosCIPByBarcode",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
+        $response = $this->connection->doRequest("GetInfosCIPByBarcode", [
             "TaxNumber"         => $bill->getPayer()->getPersonIdentity(),
             "Barcode"           => $bill->getBarCode()
         ]);
@@ -115,10 +107,7 @@ class Payment extends Service
      */
     public function cancelBillPayment(Bill $bill)
     {
-        $this->connection->doRequest([
-            "Method"            => "CancelBoletoOut",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
+        $this->connection->doRequest("CancelBoletoOut", [
             "DocumentNumber"    => $bill->getDocumentNumber(),
         ]);
     }

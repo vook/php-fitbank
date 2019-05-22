@@ -2,6 +2,7 @@
 
 namespace Vook\Fitbank\Service;
 
+use Vook\Fitbank\Abstracts\Service;
 use Vook\Fitbank\Abstracts\Person;
 use Vook\Fitbank\Responses\Transaction;
 
@@ -29,9 +30,6 @@ class DataBank extends Service
         bool $withBank = false
     ) {
         $request = [
-            "Method"            => "GetAccountEntry",
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
             "TaxNumber"         => $person->getPersonIdentity(),
             "StartDate"         => $startedAt,
             "EndDate"           => $finishedAt,
@@ -46,7 +44,7 @@ class DataBank extends Service
                 "BankAccountDigit"  => $person->getBank()->getAccountDigit(),
             ]);
         }
-        $entries = $this->connection->doRequest($request)['Entry'];
+        $entries = $this->connection->doRequest("GetAccountEntry", $request)['Entry'];
         $return = [];
         foreach ($entries as $entry) {
             $return[] = Transaction::hydrate($entry);

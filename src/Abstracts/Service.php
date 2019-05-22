@@ -1,6 +1,6 @@
 <?php
 
-namespace Vook\Fitbank\Service;
+namespace Vook\Fitbank\Abstracts;
 
 use Vook\Fitbank\Connection;
 
@@ -10,21 +10,6 @@ use Vook\Fitbank\Connection;
  */
 abstract class Service
 {
-    /**
-     * @var int
-     */
-    protected $partnerId;
-
-    /**
-     * @var int
-     */
-    protected $businessUnitId;
-
-    /**
-     * @var int
-     */
-    protected $marketId;
-
     /**
      * @var connection
      */
@@ -36,11 +21,8 @@ abstract class Service
      * @param $parceiroId
      * @param $businessUnitId
      */
-    public function __construct(Connection $connection, $parceiroId, $businessUnitId, $marketId)
+    public function __construct(Connection $connection)
     {
-        $this->partnerId        = $parceiroId;
-        $this->businessUnitId   = $businessUnitId;
-        $this->marketId         = $marketId;
         $this->connection       = $connection;
     }
 
