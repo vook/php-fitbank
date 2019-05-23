@@ -25,32 +25,4 @@ abstract class Service
     {
         $this->connection       = $connection;
     }
-
-    /**
-     * @param string $value
-     * @return string
-     */
-    protected function normalizeNumeric(string $value)
-    {
-        return preg_replace('/\D/', '', $value);
-    }
-
-    /**
-     * @param $value
-     * @return int
-     */
-    protected function normalizeInt($value)
-    {
-        return (int) $this->normalizeNumeric($value);
-    }
-
-    /**
-     * @param $date
-     * @return \DateTime|null
-     */
-    protected function parseDateTime($date)
-    {
-        return $date ? new \DateTime($date) : null;
-    }
-
 }

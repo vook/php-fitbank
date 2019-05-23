@@ -60,7 +60,7 @@ class Connection
             'headers'           => [
                 'Content-Type'      => 'application/json',
                 'X-Requested-With'  => 'XMLHttpRequest',
-                'Authorization'     => "Basic YTVkZjBhOWItNjU4OS00MWQ4LWFhZDQtYmE5ZDcxMzY0YzY1OmQzODRkODkxLTk3YmYtNGU0MC04MWZjLTdiMGQ1ODg3ZDY4MQ=="
+                'Authorization'     => "Basic {$auth}"
             ]
         ]);
     }
@@ -68,8 +68,8 @@ class Connection
     /**
      * @param $params
      * @return array
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException,
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException,
      */
     public function doRequest(string $method, array $params, bool $hasMarketPlace = false)
     {
@@ -84,17 +84,35 @@ class Connection
                 ] : [])
             ]);
             if ($request->getStatusCode() > 400) {
-                throw new \FitbankInternalErrorException();
+                throw new FitbankInternalErrorException();
             }
             $request = json_decode($request->getBody()->getContents(), true);
             if (!$request['Success'] || $request['Success'] == 'false') {
-                throw new FitbankErrorException($request['Message'] ?? '');
+                preg_match('/(.*)\s\-\s(.*)/', $request['Message'], $messages);
+                throw new FitbankErrorException($messages[2] ?? null, self::normalizeInt($messages[1]));
             }
             unset($request['Success']);
             return $request;
         } catch (GuzzleException $e) {
             throw new FitbankInternalErrorException($e->getMessage(), $e->getCode(), $e);
         }
+    }
 
+    /**
+     * @param string $value
+     * @return string
+     */
+    protected static function normalizeNumeric(string $value)
+    {
+        return preg_replace('/\D/', '', $value);
+    }
+
+    /**
+     * @param $value
+     * @return int
+     */
+    protected static function normalizeInt($value)
+    {
+        return (int) self::normalizeNumeric($value);
     }
 }
