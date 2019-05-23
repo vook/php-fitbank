@@ -4,6 +4,8 @@ namespace Vook\Fitbank\Service;
 
 use Vook\Fitbank\Abstracts\Service;
 use Vook\Fitbank\Abstracts\Person;
+use Vook\Fitbank\Exceptions\FitbankErrorException;
+use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
 use Vook\Fitbank\Responses\Transaction;
 
 /**
@@ -19,8 +21,8 @@ class DataBank extends Service
      * @param array $tags
      * @param bool $withBank
      * @return array
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function statement(
         Person $person,

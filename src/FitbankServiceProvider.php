@@ -2,8 +2,8 @@
 
 namespace Vook\Fitbank;
 
-use Carbon\Laravel\ServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Class FitbankServiceProvider
@@ -21,15 +21,8 @@ class FitbankServiceProvider extends ServiceProvider
              * @var $config Config
              */
             $config = $app->get('config');
-            return new Connection(
-                $config->get('fitbank.username'),
-                $config->get('fitbank.password'),
-                $config->get('fitbank.partner_id'),
-                $config->get('fitbank.business_unit_id'),
-                $config->get('fitbank.market_place_id'),
-                $config->get('fitbank.timeout'),
-                $config->get('fitbank.sandbox'),
-            );
+            Connection::$dateParser = $config->get('fitbank.date_parse');
+            return new Connection($config->get('fitbank'));
         });
     }
 }

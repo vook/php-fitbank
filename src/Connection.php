@@ -38,24 +38,26 @@ class Connection
     private $client;
 
     /**
-     * Connection constructor.
-     * @param null $username
-     * @param null $password
-     * @param int $timeout
-     * @param bool $isSandBox
+     * @var string
      */
-    public function __construct($username, $password, $partnerId, $businessUnitId, $marketPlaceId, $timeout, $isSandBox = true)
-    {
-        $this->partnerId = $partnerId;
-        $this->businessUnitId = $businessUnitId;
-        $this->marketPlaceId = $marketPlaceId;
-        if (!$username && !$password) {
-            $isSandBox = true;
-        }
+    public static $dateParser;
+
+    /**
+     * Connection constructor.
+     * @param array $config
+     */
+    public function __construct(array $config) {
+
+        $this->partnerId = $config['partner_id'];
+        $this->businessUnitId = $config["business_unit_id"];
+        $this->marketPlaceId = $config["market_place_id"];
+        $username = $config["username"];
+        $password = $config["password"];
+        $isSandBox = (bool) $username &&  (bool) $password && $config["sandbox"];
         $auth = base64_encode("$username:$password");
         $this->client = new Client([
             'base_uri'          => $isSandBox ? self::SANDBOX_URL : self::PROD_URL,
-            'timeout'           => $timeout,
+            'timeout'           => $config["timeout"],
             'allow_redirects'   => false,
             'headers'           => [
                 'Content-Type'      => 'application/json',

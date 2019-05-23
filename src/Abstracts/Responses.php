@@ -3,6 +3,7 @@
 namespace Vook\Fitbank\Abstracts;
 
 use Carbon\Carbon;
+use Vook\Fitbank\Connection;
 
 /**
  * Class Responses
@@ -23,7 +24,8 @@ abstract class Responses
         $instance = new $childName();
         foreach ($model as $item => $value) {
             if (preg_match('/\d{4}(\-\d{2}){2}T(\d{2}\:?){3}/', $value)) {
-                $value = new Carbon($value);
+                $dateParser = Connection::$dateParser;
+                $value = new $dateParser($value);
             }
             $instance->{lcfirst($item)} = $value;
         }

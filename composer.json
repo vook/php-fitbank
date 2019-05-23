@@ -22,8 +22,7 @@
         "ext-json": "*",
         "illuminate/support": "^5.8",
         "guzzlehttp/guzzle": "^6.3",
-        "illuminate/config": "^5.8",
-        "nesbot/carbon": "^1.26"
+        "illuminate/config": "^5.8"
     },
     "autoload": {
         "psr-4": {

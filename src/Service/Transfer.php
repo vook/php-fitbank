@@ -4,6 +4,8 @@ namespace Vook\Fitbank\Service;
 
 use Vook\Fitbank\Abstracts\Service;
 use Vook\Fitbank\Abstracts\Person;
+use Vook\Fitbank\Exceptions\FitbankErrorException;
+use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
 use Vook\Fitbank\Responses\TransferIn;
 use Vook\Fitbank\Responses\TransferOut;
 use Vook\Fitbank\Responses\VirtualAccount;
@@ -18,8 +20,8 @@ class Transfer extends Service
     /**
      * @param Person $person
      * @return VirtualAccount
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function createVirtualAccount(Person $person)
     {
@@ -50,8 +52,8 @@ class Transfer extends Service
      * @param \DateTime $transferredAt
      * @param array $products
      * @return TransferIn
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function TransferIn(
         Person $person,
@@ -99,15 +101,15 @@ class Transfer extends Service
     /**
      * @param int $documentNumber
      * @return TransferIn
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function verifyTransferIn(int $documentNumber)
     {
-        $response = $this->connection->doRequest([
+        $response = $this->connection->doRequest("GetMoneyTransferInById", [
             "DocumentNumber"    => $documentNumber
         ]);
-        return TransferIn::hydrate("GetMoneyTransferInById", $response);
+        return TransferIn::hydrate($response);
     }
 
     /**
@@ -121,8 +123,8 @@ class Transfer extends Service
      * @param \DateTime $payedAt
      * @param array|null $tags
      * @return TransferResponse
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function transfer(
         Person $from,
@@ -169,14 +171,12 @@ class Transfer extends Service
 
     /**
      * @param int $documentNumber
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function cancelTransfer(int $documentNumber)
     {
         $this->connection->doRequest("CancelMoneyTransfer", [
-            "PartnerId"         => $this->partnerId,
-            "BusinessUnitId"    => $this->businessUnitId,
             "DocumentNumber"    => $documentNumber
         ]);
     }
@@ -184,8 +184,8 @@ class Transfer extends Service
     /**
      * @param int $documentNumber
      * @return TransferOut
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function verifyTransferOut(int $documentNumber)
     {

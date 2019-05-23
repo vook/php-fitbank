@@ -4,6 +4,8 @@ namespace Vook\Fitbank\Service;
 
 use Vook\Fitbank\Abstracts\Service;
 use Vook\Fitbank\Entities\Bill;
+use Vook\Fitbank\Exceptions\FitbankErrorException;
+use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
 use Vook\Fitbank\Responses\BillInfo;
 use Vook\Fitbank\Responses\BillPayed;
 use Vook\Fitbank\Responses\Cip;
@@ -17,8 +19,8 @@ class Payment extends Service
     /**
      * @param Bill $bill
      * @return BillInfo
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function readBarcode(Bill $bill)
     {
@@ -31,8 +33,8 @@ class Payment extends Service
     /**
      * @param Bill $bill
      * @return BillPayed
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function payBill(Bill $bill)
     {
@@ -88,8 +90,8 @@ class Payment extends Service
     /**
      * @param Bill $bill
      * @return Cip
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function getInfoCIP(Bill $bill)
     {
@@ -102,8 +104,8 @@ class Payment extends Service
 
     /**
      * @param Bill $bill
-     * @throws \FitbankErrorException
-     * @throws \FitbankInternalErrorException
+     * @throws FitbankErrorException
+     * @throws FitbankInternalErrorException
      */
     public function cancelBillPayment(Bill $bill)
     {
