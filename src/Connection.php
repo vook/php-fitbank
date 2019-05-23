@@ -13,9 +13,9 @@ use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
  */
 class Connection
 {
-    const SANDBOX_URL = 'https://sandbox.fitbank.com.br';
-    const PROD_URL  = '';
-    const MAIN_REQUEST_URI = '/hmlapi/main/execute';
+    const SANDBOX_URL = 'https://sandbox.fitbank.com.br/hmlapi';
+    const PROD_URL  = 'https://apiv2.fitbank.com.br';
+    const MAIN_REQUEST_URI = '/main/execute';
 
     /**
      * @var int
