@@ -14,8 +14,10 @@ use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
 class Connection
 {
     const SANDBOX_URL = 'https://sandbox.fitbank.com.br/hmlapi';
+    const SANDBOX_MAIN_REQUEST = 'hmlapi/main/execute';
+
     const PROD_URL  = 'https://apiv2.fitbank.com.br';
-    const MAIN_REQUEST_URI = '/main/execute';
+    const PROD_MAIN_REQUEST = '/main/execute';
 
     /**
      * @var int
@@ -38,6 +40,11 @@ class Connection
     private $client;
 
     /**
+     * @var bool
+     */
+    private $isSandBox = true;
+
+    /**
      * @var string
      */
     public static $dateParser;
@@ -53,10 +60,10 @@ class Connection
         $this->marketPlaceId = $config["market_place_id"];
         $username = $config["username"];
         $password = $config["password"];
-        $isSandBox = (bool) $username &&  (bool) $password && $config["sandbox"];
+        $this->isSandBox = (bool) $username &&  (bool) $password && $config["sandbox"];
         $auth = base64_encode("$username:$password");
         $this->client = new Client([
-            'base_uri'          => $isSandBox ? self::SANDBOX_URL : self::PROD_URL,
+            'base_uri'          => $this->isSandBox ? self::SANDBOX_URL : self::PROD_URL,
             'timeout'           => $config["timeout"],
             'allow_redirects'   => false,
             'headers'           => [
@@ -76,7 +83,9 @@ class Connection
     public function doRequest(string $method, array $params, bool $hasMarketPlace = false)
     {
         try {
-            $request = $this->client->request('POST', self::MAIN_REQUEST_URI, [
+            $request = $this->client->request(
+                'POST',
+                $this->isSandBox ? self::SANDBOX_MAIN_REQUEST : self::PROD_MAIN_REQUEST, [
                 'json' => array_merge($params, [
                     'Method'            => $method,
                     'PartnerId'         => $this->partnerId,
