@@ -10,14 +10,14 @@ use Vook\Fitbank\Abstracts\Responses;
  */
 class InvoiceInfo extends Responses
 {
-    private $barcode;
-    private $digitableLine;
-    private $maturedAt;
-    private $bankCode;
-    private $bankName;
-    private $value;
-    private $concessionaireName;
-    private $concessionaireCode;
+    protected $barcode;
+    protected $digitableLine;
+    protected $maturedAt;
+    protected $bankCode;
+    protected $bankName;
+    protected $value;
+    protected $concessionaireName;
+    protected $concessionaireCode;
 
     /**
      * @return mixed
