@@ -12,7 +12,7 @@ class InvoiceInfo extends Responses
 {
     protected $barcode;
     protected $digitableLine;
-    protected $maturedAt;
+    protected $dueDate;
     protected $bankCode;
     protected $bankName;
     protected $value;
@@ -38,9 +38,9 @@ class InvoiceInfo extends Responses
     /**
      * @return mixed
      */
-    public function getMaturedAt()
+    public function getDueDate()
     {
-        return $this->maturedAt;
+        return $this->dueDate;
     }
 
     /**
