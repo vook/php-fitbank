@@ -5,162 +5,37 @@ namespace Vook\Fitbank\Responses;
 use Vook\Fitbank\Abstracts\Responses;
 
 /**
- * Class Transfer
+ * Class TransferOut
  * @package Vook\Fitbank\Responses
  */
 class TransferOut extends Responses
 {
-    protected $principalValue;
-    protected $bankNumber;
-    protected $bankAgency;
-    protected $bankAccount;
-    protected $bankAccountDigit;
-    protected $transferDate;
-    protected $status;
-    protected $paymentDate;
-    protected $rateValue;
-    protected $paymentAuthentication;
-    protected $receiptUrl;
-    protected $returnErrorMessage;
-    protected $returnErrorCode;
-    protected $returnMessage;
-    protected $returnCode;
-    protected $returns;
-    protected $protocolId;
+    protected $documentNumber;
+    protected $url;
+    protected $alreadyExists;
 
     /**
      * @return mixed
      */
-    public function getPrincipalValue()
+    public function getDocumentNumber()
     {
-        return $this->principalValue;
+        return $this->documentNumber;
     }
 
     /**
      * @return mixed
      */
-    public function getBankNumber()
+    public function getUrl()
     {
-        return $this->bankNumber;
+        return $this->url;
     }
 
     /**
      * @return mixed
      */
-    public function getBankAgency()
+    public function getAlreadyExists()
     {
-        return $this->bankAgency;
+        return $this->alreadyExists;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getBankAccount()
-    {
-        return $this->bankAccount;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBankAccountDigit()
-    {
-        return $this->bankAccountDigit;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTransferDate()
-    {
-        return $this->transferDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPaymentDate()
-    {
-        return $this->paymentDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRateValue()
-    {
-        return $this->rateValue;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPaymentAuthentication()
-    {
-        return $this->paymentAuthentication;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReceiptUrl()
-    {
-        return $this->receiptUrl;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReturnErrorMessage()
-    {
-        return $this->returnErrorMessage;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReturnErrorCode()
-    {
-        return $this->returnErrorCode;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReturnMessage()
-    {
-        return $this->returnMessage;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReturnCode()
-    {
-        return $this->returnCode;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReturns()
-    {
-        return $this->returns;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getProtocolId()
-    {
-        return $this->protocolId;
-    }
+    
 }

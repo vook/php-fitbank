@@ -8,10 +8,10 @@ use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
 use Vook\Fitbank\Request\CreateAccountRequest;
 use Vook\Fitbank\Request\TransferInRequest;
 use Vook\Fitbank\Request\TransferRequest;
-use Vook\Fitbank\Responses\TransferIn;
+use Vook\Fitbank\Responses\VerifyTransferIn;
 use Vook\Fitbank\Responses\TransferOut;
+use Vook\Fitbank\Responses\VerifyTransferOut;
 use Vook\Fitbank\Responses\VirtualAccount;
-use Vook\Fitbank\Responses\Transfer as TransferResponse;
 
 /**
  * Class Transfer
@@ -21,30 +21,29 @@ class TransferService extends Service
 {
     /**
      * @param CreateAccountRequest $request
-     * @return mixed
+     * @return integer
      * @throws FitbankErrorException
      * @throws FitbankInternalErrorException
      */
     public function createVirtualAccount(CreateAccountRequest $request)
     {
-        $response = $this->connection->doRequest("CreateAccount", $request->toArray());
-        return VirtualAccount::hydrate($response);
+        return $this->connection->doRequest("CreateAccount", $request->toArray())["Identifier"];
     }
 
     /**
      * @param TransferInRequest $request
-     * @return mixed
+     * @return string
      * @throws FitbankErrorException
      * @throws FitbankInternalErrorException
      */
     public function TransferIn(TransferInRequest $request) {
-        $response = $this->connection->doRequest("MoneyTransferIn", $request->toArray(), true);
-        return TransferIn::hydrate($response);
+        return $this->connection
+            ->doRequest("MoneyTransferIn", $request->toArray(), true)['DocumentNumber'];
     }
 
     /**
      * @param int $documentNumber
-     * @return TransferIn
+     * @return VerifyTransferIn
      * @throws FitbankErrorException
      * @throws FitbankInternalErrorException
      */
@@ -53,18 +52,18 @@ class TransferService extends Service
         $response = $this->connection->doRequest("GetMoneyTransferInById", [
             "DocumentNumber"    => $documentNumber
         ]);
-        return TransferIn::hydrate($response);
+        return VerifyTransferIn::hydrate($response);
     }
 
     /**
      * @param TransferRequest $request
-     * @return mixed
+     * @return TransferOut
      * @throws FitbankErrorException
      * @throws FitbankInternalErrorException
      */
-    public function transfer(TransferRequest $request) {
+    public function transferOut(TransferRequest $request) {
         $response = $this->connection->doRequest("MoneyTransfer", $request->toArray());
-        return TransferResponse::hydrate($response);
+        return TransferOut::hydrate($response);
     }
 
     /**
@@ -81,7 +80,7 @@ class TransferService extends Service
 
     /**
      * @param int $documentNumber
-     * @return TransferOut
+     * @return VerifyTransferOut
      * @throws FitbankErrorException
      * @throws FitbankInternalErrorException
      */
@@ -90,6 +89,6 @@ class TransferService extends Service
         $response = $this->connection->doRequest("GetMoneyTransferOutById", [
             "DocumentNumber"    => $documentNumber
         ]);
-        return TransferOut::hydrate($response['Transferencia']);
+        return VerifyTransferOut::hydrate($response['Transferencia']);
     }
 }
