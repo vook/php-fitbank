@@ -13,11 +13,9 @@ use Vook\Fitbank\Exceptions\FitbankInternalErrorException;
  */
 class Connection
 {
-    const SANDBOX_URL = 'https://sandbox.fitbank.com.br/hmlapi';
-    const SANDBOX_MAIN_REQUEST = 'hmlapi/main/execute';
-
+    const SANDBOX_URL = 'https://sandboxapi.fitbank.com.br';
     const PROD_URL  = 'https://apiv2.fitbank.com.br';
-    const PROD_MAIN_REQUEST = '/main/execute';
+    const MAIN_REQUEST = '/main/execute';
 
     /**
      * @var int
@@ -85,7 +83,7 @@ class Connection
         try {
             $request = $this->client->request(
                 'POST',
-                $this->isSandBox ? self::SANDBOX_MAIN_REQUEST : self::PROD_MAIN_REQUEST, [
+                self::MAIN_REQUEST, [
                 'json' => array_merge($params, [
                     'Method'            => $method,
                     'PartnerId'         => $this->partnerId,
