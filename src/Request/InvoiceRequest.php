@@ -199,7 +199,7 @@ class InvoiceRequest implements RequestContract
             "DiscountValue"     => $this->discountValue,
             "ExtraValue"        => $this->extraValue,
             "PaymentDate"       => $this->paymentDate->format('Y/m/d'),
-            "DueDate"           => $this->dueDate->format('Y/m/d'),
+            "DueDate"           => $this->dueDate ? $this->dueDate->format('Y/m/d') : null,
             "Identifier"        => $this->identifier,
             "RateValueType"     => $this->rateValueType,
             "RateValue"         => $this->rateValue,
